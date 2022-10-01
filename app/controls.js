@@ -4,6 +4,8 @@ import renderer from './renderer.js';
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.update();
+controls.minDistance = 1.5;
+controls.maxDistance = 4;
 controls.enablePan = false;
 controls.enableDamping = true;
 
