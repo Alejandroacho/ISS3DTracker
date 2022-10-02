@@ -8,3 +8,6 @@ Web app to display ISS in 3d with the location in real time and with the possibi
 ## Instructions
 In the project folder, you have to first run ```npm install``` and the you will be able to run the project in your localhost running ```npm run start``` and you will be able to visit the app in: http://127.0.0.1:8000/ and the he VR visualizer will be able in: http://127.0.0.1:8000/vr/
 
+## Future of the app
+We have planned to keep updating this application to implement all of the basic features, such as timeline (so you can go to the past and see the station at a given time), real scale models, better graphics, etc.
+We are also planning to add most of the other sattelites and tech sent into space, including the other planets and celestial bodies with the ability to navigate between them.
