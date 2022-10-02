@@ -6,7 +6,5 @@ Web app to display ISS in 3d with the location in real time and with the possibi
 - [npm](https://nodejs.org/es/).
 
 ## Instructions
-In the project folder, run ```npm run start``` and you will be able to visit the app in: http://127.0.0.1:8000/
-
-The VR app is located in: http://127.0.0.1:8000/vr/
+In the project folder, you have to first run ```npm install``` and the you will be able to run the project in your localhost running ```npm run start``` and you will be able to visit the app in: http://127.0.0.1:8000/ and the he VR visualizer will be able in: http://127.0.0.1:8000/vr/
 
