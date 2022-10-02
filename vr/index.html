@@ -18,7 +18,7 @@
     <script type="module">
 
         import * as THREE from '/build/three.module.js';
-        import { OrbitControls } from '/js/controls/OrbitControls.js';
+        import { OrbitControls } from '/jsm/controls/OrbitControls.js';
 
         import { TubePainter } from '/jsm/misc/TubePainter.js';
         import { VRButton } from '/jsm/webxr/VRButton.js';
@@ -52,7 +52,7 @@
             controls.target.set(0, 1.6, 0);
             controls.update();
 
-            const ISS_model = "models/iss/interior/ISS_Interior_USOnly_TexturesPacked.fbx";
+            const ISS_model = "/vr/iss/interior/ISS_Interior_USOnly_TexturesPacked.fbx";
             const loader = new FBXLoader()
 
             loader.load(ISS_model, (object) => {
