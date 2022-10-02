@@ -4,10 +4,9 @@
   "description": "Locate the ISS in 3D in real time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js" 
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Alejandro Acho, Claudia Di Pietro, Adam Rkouni",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
