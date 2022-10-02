@@ -1,0 +1,24 @@
+{
+  "name": "isslocator",
+  "version": "1.0.0",
+  "description": "Locate the ISS in 3D in real time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js" 
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "three": "^0.127.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SPACERS-NASA-Space-Apps-Barcelona/web-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SPACERS-NASA-Space-Apps-Barcelona/web-app/issues"
+  },
+  "homepage": "https://github.com/SPACERS-NASA-Space-Apps-Barcelona/web-app#readme"
+}
