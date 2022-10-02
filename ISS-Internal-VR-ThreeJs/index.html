@@ -42,7 +42,7 @@
         let camera, scene, renderer;
         let controller1, controller2;
 
-        let positions = [new THREE.Vector3(-23, 1.5, -15), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]
+        let positions = [new THREE.Vector3(-18, 1.5, -13), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]
         let ISS;
 
 
@@ -61,7 +61,7 @@
             scene = new THREE.Scene();
             scene.background = new THREE.Color(0x222222);
 
-            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 50);
+            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 50000);
             camera.position.set(0, 1.6, 3);
 
             controls = new OrbitControls(camera, container);
