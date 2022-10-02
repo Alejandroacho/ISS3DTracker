@@ -18,6 +18,13 @@ const tableInformation = [
   "visibility"
 ];
 
+const metrics = {
+  "longitude": "º",
+  "latitude": "º",
+  "altitude": " km",
+  "velocity": " km/h",
+}
+
 function setTableInformation(data) {
   const body = document.body;
   const isThereATable = body.querySelector("table");
@@ -36,8 +43,17 @@ function createTable(table, data){
     td.innerText = `${text}:`;
     td.className = "dataTitle"
     var td = tr.insertCell();
-    td.innerText = `${data[word]}`;
+    td.innerText = getInnerDataText(data, word);
     td.className = "dataCell";
+  }
+}
+
+function getInnerDataText(data, word) {
+  if (Number(data[word])) {
+    const numberFormatted = (Math.round(Number(data[word]) * 100) / 100)
+    return `${numberFormatted.toFixed(2)}${metrics[word]}`;
+  } else {
+    return `${data[word]}`;
   }
 }
 
