@@ -27,7 +27,7 @@
         let camera, scene, renderer;
         let controller1, controller2;
 
-        let positions = [new THREE.Vector3(-18, 1.5, -13), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]
+        let positions = [new THREE.Vector3(-18, 1.5, -13), new THREE.Vector3(0, 1.5, -11.8), new THREE.Vector3(0, -1.5, -11.8), new THREE.Vector3(0, 1, -4)]
         let ISS;
 
 
@@ -57,9 +57,9 @@
 
             loader.load(ISS_model, (object) => {
                 console.log(object)
-                object.position.x = positions[0].x;
-                object.position.y = positions[0].y;
-                object.position.z = positions[0].z;
+                object.position.x = positions[3].x;
+                object.position.y = positions[3].y;
+                object.position.z = positions[3].z;
                 object.quaternion._x = 0.7071067235853865;
                 object.scale.set(0.12, 0.12, 0.12);
                 scene.add(object);
@@ -142,12 +142,32 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         }
 
+
+        let alreadySelecting = false;
+        let actualPosition = 0;
+
         function handleController(controller) {
             const userData = controller.userData;
             const painter = userData.painter;
             const pivot = controller.getObjectByName('pivot');
-            if (userData.isSelecting === true) {
-                ISS.position.y += 0.5;
+
+            // console.log(alreadySelecting);
+            if (userData.isSelecting === true && alreadySelecting == false) {
+
+                if (actualPosition == positions.length) {
+                    actualPosition = 0;
+                }
+
+                ISS.position.x = positions[actualPosition].x;
+                ISS.position.y = positions[actualPosition].y;
+                ISS.position.z = positions[actualPosition].z;
+                
+                actualPosition += 1;
+                
+                alreadySelecting = true;
+
+            } else if (userData.isSelecting === false) {
+                alreadySelecting = false;
             }
             cursor.setFromMatrixPosition(pivot.matrixWorld);
         }
