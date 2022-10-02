@@ -8,8 +8,6 @@
 
 body{
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
 .container{
@@ -92,7 +90,7 @@ body{
 
     .title h1{
         font-size: 1.8rem;
-    }    
+    }
 
     .title p{
         width: 100%;
