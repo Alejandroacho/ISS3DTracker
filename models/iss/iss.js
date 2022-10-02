@@ -21,35 +21,23 @@ function loadISS() {
 }
 
 async function renderISS(gltf) {
+  gltf.scene.scale.set(0.01, 0.01, 0.01);
+  scene.add(gltf.scene);
+  updateISSPosition(gltf);
+}
+
+async function updateISSPosition(gltf) {
   const ISSCoordinates = await getCoordinates();
   const ISSCoordinatesInEarth = getRenderCoordinates(ISSCoordinates);
   gltf.scene.position.z = ISSCoordinatesInEarth.z;
   gltf.scene.position.x = ISSCoordinatesInEarth.x;
   gltf.scene.position.y = ISSCoordinatesInEarth.y;
-  gltf.scene.scale.set(0.01, 0.01, 0.01);
-  setISS(gltf.scene);
-  if (isFirstRender) {
-    centerCameraToISS(gltf.scene, ISSCoordinatesInEarth);
-    isFirstRender = false;
-  }
-  setTimeout(() => scene.remove(gltf.scene), 2100);
-}
-
-function setISS(mesh) {
-  scene.add(mesh);
-}
-
-
-function renderISSEachSecond() {
-  setTimeout(() => continuouslyRenderISS(), 2000);
-}
-
-function continuouslyRenderISS() {
-  renderISSEachSecond();
-  loadISS();
+  if (isFirstRender) centerCameraToISS(gltf.scene, ISSCoordinatesInEarth);
+  setTimeout(() => updateISSPosition(gltf), 3100);
 }
 
 function centerCameraToISS(mesh, ISSCoordinatesInEarth){
+  isFirstRender = false;
   gsap.to( camera.position, {
     duration: 3,
     x: ISSCoordinatesInEarth.x,
@@ -58,7 +46,7 @@ function centerCameraToISS(mesh, ISSCoordinatesInEarth){
     onUpdate: function() {
       camera.lookAt( mesh.position );
     }
-  } );
+  });
 }
 
-export default renderISSEachSecond;
+export default loadISS;
