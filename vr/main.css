@@ -37,6 +37,21 @@ button {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
+#trigger{
+	position: absolute;
+	top: 20px;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	font-size: 1.5rem;
+	z-index: 1; /* TODO Solve this in HTML */
+}
 a, button, input, select {
 	pointer-events: auto;
 }
