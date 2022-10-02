@@ -23,12 +23,11 @@ function loadISS() {
 async function renderISS(gltf) {
   const ISSCoordinates = await getCoordinates();
   const ISSCoordinatesInEarth = getRenderCoordinates(ISSCoordinates);
-  gltf.scene.rotation.z = -1.5;
+  gltf.scene.position.z = ISSCoordinatesInEarth.z;
   gltf.scene.position.x = ISSCoordinatesInEarth.x;
   gltf.scene.position.y = ISSCoordinatesInEarth.y;
   gltf.scene.scale.set(0.01, 0.01, 0.01);
   setISS(gltf.scene);
-  console.log(isFirstRender)
   if (isFirstRender) {
     centerCameraToISS(gltf.scene, ISSCoordinatesInEarth);
     isFirstRender = false;
@@ -55,7 +54,7 @@ function centerCameraToISS(mesh, ISSCoordinatesInEarth){
     duration: 3,
     x: ISSCoordinatesInEarth.x,
     y: ISSCoordinatesInEarth.y,
-    z: 0.5,
+    z: ISSCoordinatesInEarth.z,
     onUpdate: function() {
       camera.lookAt( mesh.position );
     }
