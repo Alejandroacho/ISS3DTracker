@@ -3,12 +3,14 @@ import {GLTFLoader} from '/jsm/loaders/GLTFLoader.js';
 import {DRACOLoader} from '/jsm/loaders/DRACOLoader.js';
 import getCoordinates from './location.js';
 import getRenderCoordinates from '../earth/location.js';
+import camera from '../../app/camera.js';
 
 const ISSGltf = "models/iss/gltf/iss.gltf";
 const loader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath("/libs/draco/");
 loader.setDRACOLoader( dracoLoader );
+var isFirstRender = true;
 
 function loadISS() {
   loader.load(ISSGltf, (gltf) => {
@@ -26,7 +28,12 @@ async function renderISS(gltf) {
   gltf.scene.position.y = ISSCoordinatesInEarth.y;
   gltf.scene.scale.set(0.01, 0.01, 0.01);
   setISS(gltf.scene);
-  setTimeout(() => scene.remove(gltf.scene), 2000);
+  console.log(isFirstRender)
+  if (isFirstRender) {
+    centerCameraToISS(gltf.scene, ISSCoordinatesInEarth);
+    isFirstRender = false;
+  }
+  setTimeout(() => scene.remove(gltf.scene), 2100);
 }
 
 function setISS(mesh) {
@@ -41,6 +48,18 @@ function renderISSEachSecond() {
 function continuouslyRenderISS() {
   renderISSEachSecond();
   loadISS();
+}
+
+function centerCameraToISS(mesh, ISSCoordinatesInEarth){
+  gsap.to( camera.position, {
+    duration: 3,
+    x: ISSCoordinatesInEarth.x,
+    y: ISSCoordinatesInEarth.y,
+    z: 0.5,
+    onUpdate: function() {
+      camera.lookAt( mesh.position );
+    }
+  } );
 }
 
 export default renderISSEachSecond;
