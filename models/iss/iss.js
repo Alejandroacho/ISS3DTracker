@@ -23,7 +23,7 @@ function loadISS() {
 async function renderISS(gltf) {
   gltf.scene.scale.set(0.01, 0.01, 0.01);
   scene.add(gltf.scene);
-  setTimeout(() => updateISSPosition(gltf), 3100);
+  updateISSPosition(gltf);
 }
 
 async function updateISSPosition(gltf) {
