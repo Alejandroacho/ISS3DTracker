@@ -3,7 +3,7 @@ import camera from './camera.js';
 import earthMesh from '../models/earth/earth.js';
 import starMesh from '../models/galaxy/galaxy.js';
 import cloudMesh from '../models/clouds/clouds.js';
-import renderISSEachSecond from '../models/iss/iss.js';
+import loadISS from '../models/iss/iss.js';
 import {ambientLight, pointLight} from '../models/sun/light.js';
 
 const scene = new THREE.Scene();
@@ -13,6 +13,6 @@ scene.add(ambientLight);
 scene.add(pointLight);
 scene.add(starMesh);
 scene.add(cloudMesh);
-renderISSEachSecond();
+loadISS();
 
 export default scene;
