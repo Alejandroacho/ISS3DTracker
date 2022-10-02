@@ -8,6 +8,8 @@
 
 body{
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .container{
@@ -201,4 +203,24 @@ body{
        width: 100%;
    }
 }
-/*xx** making responsive ***xx*/
+
+table {
+    display: flex;
+    margin-top: -20vh;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border: 2px solid white;
+    width: 15%;
+    border-radius: 1rem;
+    padding: 15px;
+    backdrop-filter: blur(30px);
+    margin-left: 5vh
+}
+
+.dataTitle {
+    font-weight: 600;
+}
+
+.dataCell {
+    padding-left: 10px;
+}
