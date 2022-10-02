@@ -22,4 +22,11 @@ const render = () => {
   renderer.render(scene, camera);
 }
 
+const vrButton = document.querySelector('#vr-button');
+
+vrButton.addEventListener('click', () => {
+  
+  window.location.href ="https://isslocator.earth/vr/";
+})
+
 animate();
