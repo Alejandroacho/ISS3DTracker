@@ -10,4 +10,4 @@ In the project folder, you have to first run ```npm install``` and the you will 
 
 ## Future of the app
 We have planned to keep updating this application to implement all of the basic features, such as timeline (so you can go to the past and see the station at a given time), real scale models, better graphics, etc.
-We are also planning to add most of the other sattelites and tech sent into space, including the other planets and celestial bodies with the ability to navigate between them.
+We are also planning to add most of the other satellites and tech sent into space, including the other planets and celestial bodies with the ability to navigate between them.
