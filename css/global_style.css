@@ -204,11 +204,11 @@ body{
 
 table {
     display: flex;
-    margin-top: -20vh;
+    margin-top: -30vh;
     color: white;
     font-family: "Poppins", sans-serif;
     border: 2px solid white;
-    width: 16%;
+    width: 300px;
     border-radius: 1rem;
     padding: 15px;
     backdrop-filter: blur(30px);
