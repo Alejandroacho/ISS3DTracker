@@ -1,6 +1,6 @@
 # ISS 3D Tracker
 
-Web app to display ISS in 3d with the location in real time and with the possibility to enter the ISS through VR. This project was bron during the [NASA Space Apps Hackathon of 2022](https://2022.spaceappschallenge.org/challenges/2022-challenges/track-the-iss/details), it was developed in Barcelona during 3 days by [Alejandro Acho](https://github.com/Alejandroacho), [Claudia Di Pietro](https://github.com/claudiadipietro) and [Adam Rkouni](https://github.com/adam-53-r).
+Web app to display ISS in 3d with the location in real time and with the possibility to enter the ISS through VR. This project was born during the [NASA Space Apps Hackathon of 2022](https://2022.spaceappschallenge.org/challenges/2022-challenges/track-the-iss/details), it was developed in Barcelona during 3 days by [Alejandro Acho](https://github.com/Alejandroacho), [Claudia Di Pietro](https://github.com/claudiadipietro) and [Adam Rkouni](https://github.com/adam-53-r). This project was the winner of the local hackathon.
 
 ## Requirements
 - [npm](https://nodejs.org/es/).
